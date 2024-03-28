@@ -3,21 +3,30 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			demo: [
 				{
-					title: "FIRST",
+					title: "FIRST1",
 					background: "white",
 					initial: "white"
 				},
 				{
-					title: "SECOND",
+					title: "SECOND23",
 					background: "white",
 					initial: "white"
 				}
-			]
+			],
+			address: 'siempre viva 123',
+			titulo: 'este es el titulo Flux'
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
+			},
+			printText: () => {
+				console.log('Hola desde flux')
+			},
+			updateTitle: () => {
+				console.log('updateTitle')
+				setStore({ titulo: 'nuevo titulo' });
 			},
 			loadSomeData: () => {
 				/**
